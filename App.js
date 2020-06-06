@@ -24,8 +24,16 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+
+
+const alpha = require('alphavantage')({ key: 'MH4AW8511HB7KXGX' });
 const App: () => React$Node = () => {
+  alpha.data.intraday(`BBRI.JK`).then(data => {
+    console.log(data);
+  });
   return (
+
+    
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
